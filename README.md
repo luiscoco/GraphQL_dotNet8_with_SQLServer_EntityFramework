@@ -1,5 +1,9 @@
 # How to create .NET 8 GraphQL API with SQLServer and EntityFramework
 
+The source code for this example is available in this github repo: 
+
+https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework
+
 ## 1. Pull and run the SQLServer Docker image with Docker Desktop
 
 We run Docker Desktop application
