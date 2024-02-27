@@ -41,7 +41,7 @@ We create the database for this sample
 ## 2. Create a new .NET 8 WebAPI with Visual Studio 2022
 
 We run Visual Studio 2022 Community Edition and we create a new project
-G
+
 ![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/346b3777-7f19-439c-bb06-a24ad1503729)
 
 We select the **api** project template
