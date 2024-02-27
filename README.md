@@ -100,8 +100,38 @@ public class BlogDbContext : DbContext
 }
 ```
 
-
 ## 6. Add the Service
+
+**IAuthorService.cs**
+
+```csharp
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public interface IAuthorService
+    {
+        Author GetAuthorById(int id);
+        List<Author> GetAllAuthors();
+    }
+}
+```
+
+**IPostService.cs**
+
+```
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public interface IPostService
+    {
+        Post GetPostById(int id);
+        List<Post> GetAllPosts();
+        Post AddPost(Post post);
+    }
+}
+```
 
 
 ## 7. Add GraphQL Types, Query and Mutations
