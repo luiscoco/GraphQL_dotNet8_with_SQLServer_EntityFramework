@@ -395,7 +395,21 @@ app.Run();
 
 ## 10. Add database Migrations
 
+We first run the initial migration
 
+```
+dotnet ef migrations add InitialSeed
+```
+
+and then we run this command to update the database
+
+```
+dotnet ef database update
+```
+
+We can verify in SSMS the new tables created 
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/8cdf1405-6a68-4157-b625-94dcdef3d6aa)
 
 ## 11. Run and Test the application
 
