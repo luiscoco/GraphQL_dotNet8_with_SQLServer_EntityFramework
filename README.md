@@ -10,10 +10,11 @@
 
 ## 3. Create the project structure
 
-
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/b99ba4d6-50fa-48a5-a1dc-c2b8b62452a0)
 
 ## 4. Add project dependencies 
 
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/0139f24c-df09-481f-911f-dc4986c50411)
 
 
 ## 5. Add the models
@@ -347,7 +348,20 @@ app.Run();
 
 ## 9. Modify appsettings.json
 
-
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=GraphQLProductDB;User ID=sa;Password=Luiscoco123456;Encrypt=false;TrustServerCertificate=true;"
+  },
+  "AllowedHosts": "*"
+}
+```
 
 ## 10. Add database Migrations
 
