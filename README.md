@@ -465,6 +465,18 @@ We can verify in SSMS the new tables created
 
 ## 11. Run and Test the application
 
+We build and run the application in Visual Studio 
+
+We navigate to the Banana endpoint: https://localhost:7106/graphql/
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/53caeb3b-a90b-4634-9696-2e5ee91f7d69)
+
+We press on the **Create document** button 
+
+We input the samples code, see below
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/adf8f371-15ff-4740-9cd3-6e1dda27aad8)
+
 Query Examples
 
 **Fetch an Author by ID**
@@ -487,6 +499,8 @@ query GetAuthor {
 
 Replace 1 with the actual ID of the author you want to test
 
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/982fabc0-9c1d-4c2d-94ce-42f33c7a94b1)
+
 **Fetch a Post by ID**
 
 This query retrieves a post by its id, including the author details
@@ -506,6 +520,8 @@ query GetPost {
 ```
 
 Replace 1 with the actual ID of the post you want to test
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/4a80128e-bd2a-4cf8-9b4f-1c050c26aa89)
 
 **Mutation Example (Add a New Post)**
 
@@ -527,4 +543,5 @@ mutation AddNewPost {
 
 Replace "New GraphQL Post", "Exploring GraphQL mutations.", and 1 with your desired post title, content, and author ID, respectively
 
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/7840005e-6cbb-4cd1-9ffd-59e36be94c12)
 
