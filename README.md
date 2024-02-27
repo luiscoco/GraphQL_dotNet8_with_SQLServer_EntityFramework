@@ -369,6 +369,60 @@ app.Run();
 
 ## 11. Run and Test the application
 
+Query Examples
+Fetch an Author by ID
+This query retrieves an author by their id, including all posts associated with the author.
 
+graphql
+Copy code
+query GetAuthor {
+  author(id: 1) {
+    id
+    name
+    posts {
+      id
+      title
+      content
+    }
+  }
+}
+Replace 1 with the actual ID of the author you want to test.
+
+Fetch a Post by ID
+This query retrieves a post by its id, including the author details.
+
+graphql
+Copy code
+query GetPost {
+  post(id: 1) {
+    id
+    title
+    content
+    author {
+      id
+      name
+    }
+  }
+}
+Replace 1 with the actual ID of the post you want to test.
+
+Mutation Example
+Add a New Post
+This mutation adds a new post to the database. You need to provide a title, content, and the author's ID.
+
+graphql
+Copy code
+mutation AddNewPost {
+  addPost(input: {title: "New GraphQL Post", content: "Exploring GraphQL mutations.", authorId: 1}) {
+    id
+    title
+    content
+    author {
+      id
+      name
+    }
+  }
+}
+Replace "New GraphQL Post", "Exploring GraphQL mutations.", and 1 with your desired post title, content, and author ID, respectively.
 
 
