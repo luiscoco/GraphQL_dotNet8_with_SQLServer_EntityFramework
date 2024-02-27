@@ -40,9 +40,31 @@ We create the database for this sample
 
 ## 2. Create a new .NET 8 WebAPI with Visual Studio 2022
 
+We run Visual Studio 2022 Community Edition and we create a new project
+G
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/346b3777-7f19-439c-bb06-a24ad1503729)
 
+We select the **api** project template
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/79fa8f9e-b440-4b3f-bd26-78469730622f)
+
+We input the project name and location 
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/95ec4d51-f35e-4e56-9833-d9d042320df5)
+
+We select the project default features
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/8fc0435d-c623-44d9-9173-ec2bd1cdf77b)
+
+After opening the project in Visual Studio we can delete the Controller folder and the Weatherforecast controller and service
 
 ## 3. Create the project structure
+
+First we create the **Models** folder and inside the files: Author.cs, Post.cs and AppDbContext.cs
+
+Then we create the **Services** folder and we place inside the files: IAuthorService.cs, AuthorService.cs, IPostService.cs and PostService.cs
+
+We finally create the **GraphQL** folder and the **Types** subfolder. We also create the files: AuthorType.cs, PostType.cs, Query.cs and Mutation.cs 
 
 ![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/b99ba4d6-50fa-48a5-a1dc-c2b8b62452a0)
 
@@ -50,6 +72,32 @@ We create the database for this sample
 
 ![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/0139f24c-df09-481f-911f-dc4986c50411)
 
+See the csproj file
+
+```
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
+```
 
 ## 5. Add the models
 
