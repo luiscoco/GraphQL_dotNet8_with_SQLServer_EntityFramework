@@ -18,6 +18,87 @@
 
 ## 5. Add the models
 
+**Author.cs**
+
+```csharp
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GraphQLDemo.Models
+{
+    public class Author
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(200)] // Adjust max length as necessary
+        public string Name { get; set; }
+
+        // Virtual for enabling lazy loading
+        public virtual List<Post> Posts { get; set; } = new List<Post>();
+    }
+}
+```
+
+**Post.cs**
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GraphQLDemo.Models
+{
+    public class Post
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(200)] // Adjust max length as necessary for Title
+        public string Title { get; set; }
+
+        [Required]
+        public string Content { get; set; }
+
+        [ForeignKey("Author")]
+        public int AuthorId { get; set; }
+
+        // Virtual for enabling lazy loading
+        public virtual Author Author { get; set; }
+    }
+}
+```
+
+**AppDbContext.cs**
+
+```csharp
+using Microsoft.EntityFrameworkCore;
+using GraphQLDemo.Models;
+
+public class BlogDbContext : DbContext
+{
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
+    public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options) { }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Seed initial data
+        modelBuilder.Entity<Author>().HasData(
+            new Author { Id = 1, Name = "Jane Austen" },
+            new Author { Id = 2, Name = "Charles Dickens" }
+        );
+
+        modelBuilder.Entity<Post>().HasData(
+            new Post { Id = 1, Title = "Exploring GraphQL", Content = "GraphQL offers a more efficient way to design web APIs.", AuthorId = 1 },
+            new Post { Id = 2, Title = "Advantages of GraphQL", Content = "One major advantage of GraphQL is it allows clients to request exactly what they need.", AuthorId = 1 }
+        );
+    }
+}
+```
 
 
 ## 6. Add the Service
