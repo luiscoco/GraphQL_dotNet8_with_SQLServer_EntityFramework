@@ -28,6 +28,12 @@ And also we can see the running container in Docker Desktop
 
 We run SSMS SQL Server Management Studio and we connect to the SQL Server running docker container
 
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/5381d14a-1019-421e-903e-cf37ccb0300d)
+
+We create the database for this sample
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_with_SQLServer_EntityFramework/assets/32194879/4c0600ef-077d-49eb-a970-c733ac663e24)
+
 ## 2. Create a new .NET 8 WebAPI with Visual Studio 2022
 
 
